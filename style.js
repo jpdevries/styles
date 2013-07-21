@@ -6,7 +6,7 @@ RedactorPlugins.style = {
 		console.dir(this.opts.formattingTags);
 		var styleJSON = [
 			{btnName:'Bold Red',className:'redactor_format_boldred',style:'font-weight:bold;color:red'},
-			{btnName:'aside',className:'redactor_format_aside',wrap: 'aside'}
+			{btnName:'Green Aside',className:'redactor_format_greenaside',wrap: 'aside',style:'color:green'}
 		];
 		var that = this;
 		var dropdown = {};
@@ -22,8 +22,10 @@ RedactorPlugins.style = {
 	},
 	setFontfamily: function (s)
 	{
-		if (s.wrap) this.selectionWrap(s.wrap);
-		else this.inlineSetAttr('style', s.style);
+		this.inlineSetAttr('style', s.style);
+		if (s.wrap) {
+			this.selectionWrap(s.wrap);
+		} 
 	},
 	resetFontfamily: function()
 	{
