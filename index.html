@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redactor is awesome!</title>
+
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="http://imperavi.com/js/redactor/redactor.css" />
+    <style type="text/css">
+        body .redactor_toolbar li a.redactor_btn_style              {  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAbCAYAAACN1PRVAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkU5MEMxNTdFRTlCOTExRTJCODU0Rjk5MzYyREE4QjZGIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkU5MEMxNTdGRTlCOTExRTJCODU0Rjk5MzYyREE4QjZGIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RTkwQzE1N0NFOUI5MTFFMkI4NTRGOTkzNjJEQThCNkYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RTkwQzE1N0RFOUI5MTFFMkI4NTRGOTkzNjJEQThCNkYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz43U8A8AAABSElEQVR42mL8//8/A70AEwMdwahltLeMkZGRIA4NDQWZwQTj08xnISEh0UxMTD/mzJnz69+/f5OBKRuvbYz4kj4+lwItMgdSx2AOdnNzY0hJSZkB1JMF5P6nms9APtLS0qrW09O7CBPbtWsXw+7duzOAzHSqBSM06Oa/ffvWR1paWhFo4QVYKIiJiYF8dJ8qwQizyMzMjOnkyZNMoDjy9/dnePjw4Tl1dfW3QPmFQGVLKbYMm0UwNZ2dnf8UFRVNgOzz+MxjIiXosFmUm5v7H2hRHMgiijM1yCKgQQvNzc2ZsVlka2sbC2QvJcbReIMRmGF9mJmZV6uqqrLevHmTGaYWn0WUBKMJMOKvFRcXL2FhYdlBro+IDsZr164ZrV69Oj4uLu4/0PD/5FoEAizEKAJlWKDhnpRYRDDORuuzUctGLRt6lgEEGAAtMJeWYRfxcgAAAABJRU5ErkJggg==); }
+
+        @media
+        only screen and (-webkit-min-device-pixel-ratio: 2),
+        only screen and (   min--moz-device-pixel-ratio: 2),
+        only screen and (     -o-min-device-pixel-ratio: 2/1),
+        only screen and (        min-device-pixel-ratio: 2),
+        only screen and (                min-resolution: 192dpi),
+        only screen and (                min-resolution: 2dppx) {    
+            body .redactor_toolbar li a.redactor_btn_style              { background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAA2CAYAAACMRWrdAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjcyQkFEMTIzRTlCOTExRTJCODU0Rjk5MzYyREE4QjZGIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjcyQkFEMTI0RTlCOTExRTJCODU0Rjk5MzYyREE4QjZGIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NzJCQUQxMjFFOUI5MTFFMkI4NTRGOTkzNjJEQThCNkYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NzJCQUQxMjJFOUI5MTFFMkI4NTRGOTkzNjJEQThCNkYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4+671fAAACV0lEQVR42uzYv2saURwA8Hd3KohS0NYhQzeVbk4lIEKHTN0cVIggOqSbiwh2EdKMwaGDi5hFFws2iGMIdqkuoVunks1/IBBIdKh39vsVTowxCb33kveQ7xfkfnge73Pv+773ntp8PmfbGDrb0iAYwQhGMIIRjGDbBtM0TcgnnU5jO/RN3zkNl8ynmkql3ns8nlOYr75tNpvWbDY7MQyjCCCT994azySY54kCalfX9R+WZfnsc4lEghWLxW+Ay9k4p+1zSeqpeyiM0WiEm33AISjH03OyUjG1jnoIB/vmixcPJz1VLpdPut3uLRw2HroOce12ex92vypf7u30G4/HB51O5xBw14/hBoMB9tgnp23UZYypfr/PAPf5MVwoFMLiNIZdS0nYKioYDGLVu3oK5/V68TpM15ySqbiOyufzV41GY1mwNuEQVa1WbyORyB702C/l3mObUPV63QUv4Vfr1yaTSZbNZo8zmYxRKpV24vF4He59wfMeexbY/6DsABROrb7APY9Wzzttn/4S6fcUCtMvFovhmDpTcnbvFIVjKhqN7tnppxRMJZQwmGooIbBVlN/vZ4VC4UY2irsqQhVbomC7qJKwvmLT6ZSJQsmqiueICofDrFar/QbcpUgUT/AuWxbpVqlUWCAQ+PgXAhaJP03TfCcTJax4wHhiw+HwNSw1Zm63+wPg/shEiRhjd37carWYz+cLwPk3cIg4gxelxMxjMpmwXq8XhV77LgKlTI89R/opM1eUNaaE9pjKQX9xE4xgBCMYwQhGMIIRjGAEIxjBhMY/AQYA5HJwoEda9GQAAAAASUVORK5CYII=); }
+
+        }
+
+        .redactor_dropdown .redactor_format_boldred { color:red;font-weight:bold; }
+    </style>
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="http://imperavi.com/js/redactor/redactor.js"></script>
+
+    <!-- Redactor's plugin -->
+    <script src="style.js"></script>
+
+	 <!-- Call Redactor -->
+    <script type="text/javascript">
+    $(document).ready(
+        function()
+        {
+            $('#redactor').redactor({
+            	focus: true,
+                plugins: ['style']
+            });
+        }
+    );
+    </script>
+
+	 <!-- Site styles -->
+	<style type="text/css">
+	html, body {
+		margin: 0;
+		padding: 0;
+	}
+	body {
+		font-family: Helvetica, Arial, sans-serif;
+		font-size: 14px;
+	}
+	#page {
+		width: 940px;
+		margin: 50px auto;
+	}
+	</style>
+
+</head>
+<body>
+    <div id="page">
+        <textarea id="redactor" name="content" style="width: 99%; height: 400px;">
+        	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </textarea>
+
+
+    </div>
+</body>
+</html>
