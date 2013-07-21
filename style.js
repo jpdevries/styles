@@ -1,11 +1,5 @@
 if (!RedactorPlugins) var RedactorPlugins = {};
 
-var redStylesJSON = [
-			{btnName:'Bold Red',className:'redactor_format_boldred',style:'font-weight:bold;color:red'},
-			{btnName:'Green Faint',className:'redactor_format_greenfaint',spanClass:'mygreen'},
-			{btnName:'Green Aside',className:'redactor_format_greenaside',wrap: 'aside',style:'color:green'}
-];
-
 RedactorPlugins.styles = {
 	init: function ()
 	{
@@ -20,8 +14,7 @@ RedactorPlugins.styles = {
 		});
 
 		dropdown['remove'] = { title: 'Remove style', callback: function() { that.resetFontfamily(); }};
-		console.log(this.buttonGet('formatting'));
-		(this.buttonGet('formatting').length) ? this.buttonAddAfter('formatting','styles', 'Change font family', false, dropdown) : this.buttonAdd('styles', 'Change font family', false, dropdown);
+		(this.buttonGet('formatting').length) ? this.buttonAddAfter('formatting','formatting', this.opts.curLang.customStyles, false, dropdown) : this.buttonAdd('formatting', this.opts.curLang.customStyles, false, dropdown);
 	},
 	setFontfamily: function (s)
 	{
