@@ -22,10 +22,12 @@ RedactorPlugins.style = {
 	},
 	setFontfamily: function (s)
 	{
-		this.inlineSetAttr('style', s.style);
+
 		if (s.wrap) {
-			this.selectionWrap(s.wrap);
-		} 
+			this.selectionWrap(s.wrap); 
+			//this.inlineFormat(s.wrap);
+		}
+		this.inlineSetAttr('style', s.style);
 	},
 	resetFontfamily: function()
 	{
