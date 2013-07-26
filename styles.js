@@ -37,7 +37,11 @@ RedactorPlugins.styles = {
 	{
 		var that = this;
 		jQuery.each(redStylesJSON, function(i,s) {
-			if(s.spanClass) that.inlineRemoveClass(s.spanClass);
+			if(s.spanClass) {
+				that.inlineRemoveClass(s.spanClass);
+				that.blockRemoveClass(s.spanClass);
+				that.formatBlocks('p');
+			}
 		});
 		this.inlineSetAttr('style','');
 	}
