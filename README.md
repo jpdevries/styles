@@ -1,4 +1,4 @@
 style
 =====
 
-Redactor Plugin that adds Custom Formatting
+Magical Redactor plugin that adds Custom Formatting
