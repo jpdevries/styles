@@ -1,5 +1,5 @@
 /*
-[{"btnName":"Note","className":"redactor_format_note","wrap":"div","spanClass":"note"}]
+[{"btnName":"Inline Code","className":"redactor_format_pre","wrap":"code","forceBlock":"0"}]
  */
 
 if (!RedactorPlugins) var RedactorPlugins = {};
@@ -7,7 +7,7 @@ if (!RedactorPlugins) var RedactorPlugins = {};
 RedactorPlugins.styles = {
 	init: function ()
 	{
-		this.opts.stylesJson = jQuery.parseJSON(this.opts.stylesJson);
+		try { this.opts.stylesJson = jQuery.parseJSON(this.opts.stylesJson); } catch(e) {} 
 		//if(typeof this.opts.stylesJson === 'undefined' || !this.opts.stylesJson.length) return;
 		var that = this;
 		var dropdown = {};
@@ -22,13 +22,14 @@ RedactorPlugins.styles = {
 	},
 	setCustomFormat: function (s)
 	{
-		if (s.wrap) {
+		if (s.forceBlock != -1 && (s.forceBlock == 1 || (s.wrap && !(jQuery.inArray(s.wrap,['a','em','strong','small','s','cite','q','dfn','abbr','data','time','var','samp','kbd','i','b','u','mark','ruby','rt','rp','bdi','bdo','span','sub','sup','code']) > -1)))) {
 			this.selectionWrap(s.wrap); 
 			//this.inlineFormat(s.wrap);
 			if(s.style) this.blockSetAttr('style',s.style);
 			if(s.spanClass) this.blockSetClass(s.spanClass);
 		}
 		else {
+			if(s.wrap) this.inlineFormat(s.wrap);
 			if(s.style) this.inlineSetAttr('style', s.style);
 			if(s.spanClass) this.inlineSetClass(s.spanClass);
 		}
@@ -46,3 +47,4 @@ RedactorPlugins.styles = {
 		this.inlineSetAttr('style','');
 	}
 };
+

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 <head>
     <title>Redactor is awesome!</title>
@@ -6,7 +6,7 @@
     <meta charset="utf-8">
 
     <link rel="stylesheet" href="http://imperavi.com/js/redactor/redactor.css" />
-    <link rel="stylesheet" href="http://imperavi.com/js/redactor/styles.css" />
+    <link rel="stylesheet" href="styles.css" />
     <style type="text/css">
         .redactor_dropdown .redactor_format_boldred { color:red;font-weight:bold; }
         .redactor_dropdown .redactor_format_greenaside { color:green; }
@@ -35,7 +35,8 @@ var redStylesJSON = [
         {
             $('#redactor').redactor({
             	focus: true,
-                plugins: ['styles']
+                plugins: ['styles'],
+                stylesJson: redStylesJSON
             });
         }
     );
