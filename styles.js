@@ -7,12 +7,12 @@ if (!RedactorPlugins) var RedactorPlugins = {};
 RedactorPlugins.styles = {
 	init: function ()
 	{
-		if(typeof redStylesJSON === 'undefined' || !redStylesJSON.length) return;
-		
+		this.opts.stylesJson = jQuery.parseJSON(this.opts.stylesJson);
+		//if(typeof this.opts.stylesJson === 'undefined' || !this.opts.stylesJson.length) return;
 		var that = this;
 		var dropdown = {};
 
-		jQuery.each(redStylesJSON, function(i, s)
+		jQuery.each(this.opts.stylesJson, function(i, s)
 		{
 			dropdown['s' + i] = { title: s.btnName, className:s.className, callback: function() { that.setCustomFormat(s); }};
 		});
@@ -36,7 +36,7 @@ RedactorPlugins.styles = {
 	resetCustomFormat: function()
 	{
 		var that = this;
-		jQuery.each(redStylesJSON, function(i,s) {
+		jQuery.each(this.opts.stylesJson, function(i,s) {
 			if(s.spanClass) {
 				that.inlineRemoveClass(s.spanClass);
 				that.blockRemoveClass(s.spanClass);
